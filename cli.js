@@ -29,5 +29,5 @@ if (!file) {
 if (!fs.existsSync(file)) {
   console.error(`${file} doesn't exist. ¯\_(ツ)_/¯.\nIs the path correct?`)
 } else {
-  console.log(fromSvg(fs.readFileSync(file, 'utf-8'), false))
+  console.log(fromSvg(fs.readFileSync(file, 'utf-8'), legacy))
 }
