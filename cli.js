@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+const chalk = require('chalk')
 const fromSvg = require('./lib.js')
 const fs = require('fs')
 
@@ -27,7 +28,7 @@ if (!file) {
 }
 
 if (!fs.existsSync(file)) {
-  console.error(`${file} doesn't exist. ¯\_(ツ)_/¯.\nIs the path correct?`)
+  console.error(chalk.red(`${file} doesn't exist. ¯\_(ツ)_/¯.\nIs the path correct?`))
 } else {
-  console.log(fromSvg(fs.readFileSync(file, 'utf-8'), legacy))
+  console.log(chalk.blue(fromSvg(fs.readFileSync(file, 'utf-8'), legacy)))
 }
